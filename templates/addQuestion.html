@@ -1,0 +1,174 @@
+{% include "header.html"%}
+
+
+<script>
+  function addCluster() {
+  var clusterContainer = document.getElementById('clusterContainer');
+
+  var clusterDiv = document.createElement('div');
+  clusterDiv.classList.add('cluster');
+
+  var clusterLabel = document.createElement('label');
+  clusterLabel.textContent = 'Cluster ' + (clusterContainer.childElementCount + 1) + ':';
+  clusterLabel.setAttribute('style','font-size: 22px;font-weight: 600;padding-right: 0.55rem;');
+  
+  var clusterTextarea = document.createElement('input');
+  clusterTextarea.classList.add('clusterText');
+  clusterTextarea.setAttribute('name', 'clusterText[]');
+  clusterTextarea.setAttribute('placeholder', 'Enter lines');
+
+  var clusterMarkInput = document.createElement('input');
+  clusterMarkInput.classList.add('clusterMark');
+  clusterMarkInput.setAttribute('type', 'text');
+  clusterMarkInput.setAttribute('name', 'clusterMark[]');
+  clusterMarkInput.setAttribute('min', '0');
+  clusterMarkInput.setAttribute('placeholder', 'Enter mark');
+  clusterMarkInput.setAttribute('style','margin-left: 1.2rem;');
+  
+
+  clusterDiv.appendChild(clusterLabel);
+  clusterDiv.appendChild(clusterTextarea);
+  clusterDiv.appendChild(clusterMarkInput);
+
+  clusterContainer.appendChild(clusterDiv);
+}
+
+var clusterForm = document.getElementById('clusterForm');
+clusterForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  // Access form values
+  var question = document.getElementById('question').value;
+  var answer = document.getElementById('answer').value;
+  var totalMark = document.getElementById('totalMark').value;
+
+  // Access cluster values
+  var clusterTexts = document.getElementsByClassName('clusterText');
+  var clusterMarks = document.getElementsByClassName('clusterMark');
+
+  var clusters = [];
+  for (var i = 0; i < clusterTexts.length; i++) {
+    var cluster = {
+      text: clusterTexts[i].value,
+      mark: clusterMarks[i].value
+    };
+    clusters.push(cluster);
+  }
+
+  // Print the form data for demonstration
+  console.log('Question:', question);
+  console.log('Answer:', answer);
+  console.log('Total Mark:', totalMark);
+  console.log('Clusters:', clusters);
+
+  // Perform additional processing or submit the form data to a server here
+});
+
+</script>
+<div class="container">
+<form id="clusterForm" method="post" action="{% url 'form_submission' %}">
+  {% csrf_token %}
+
+  <h2 class="heading-one">Part 1 - Question </h2>
+  <hr class="custom">
+<div class="subcontainer">
+  <label for="question">Question:</label><br>
+  <textarea class="large" type="text" id="question" name="question" required></textarea><br>
+
+  <label for="answer">Answer:</label><br>
+  <textarea class="large" id="answer" name="answer" required></textarea><br>
+
+  <label for="totalMark">Total Mark:</label><br>
+  <input type="number" id="totalMark" name="totalMark" required>
+</div>
+<br><br>
+  <h2>Part 2 - Cluster Builder</h2>
+  <hr class="custom">
+  <div id="clusterContainer">
+    <div class="cluster">
+      <label style="font-size: 22px;font-weight: 600;padding-right: 0.5rem;">Cluster 1:</label>
+      <input class="clusterText" name="clusterText[]" placeholder="Enter lines">
+      <input style="margin-left: 1rem;" placeholder="Enter mark" class="clusterMark" type="text" name="clusterMark[]" min="0">
+    </div>
+  </div>
+  <button class="cluster-btn" type="button" onclick="addCluster()">Add Cluster</button>
+  <br><br><br>
+  <button class="submit-btn" type="submit">Submit</button>
+  <a class="btn-back"  href="teacherPage">Back</a>
+</form>
+</div>
+{% if messages %}
+  {% for message in messages %}
+    <script>
+      alert("{{ message }}");
+    </script>
+  {% endfor %}
+{% endif %}
+
+
+
+<style>
+.btn-back{
+  text-decoration: none;
+  margin-left: 5rem;
+  margin-top: 2rem;
+  background-color: #3A98B9;
+  color: white;
+  border-color: #3A98B9;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  }
+  .btn-back:hover{
+  background-color: rgba(128, 128, 128, 0.568);
+  border-color: rgba(128, 128, 128, 0.568);
+}
+.large{
+width: 30rem;
+height: 10rem;
+}
+.container{
+  margin-left: 10rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.custom{
+  width: 65rem;
+  height: 0.1rem;
+  background-color: black;
+}
+.subcontainer{
+  padding-left: 16rem;
+}
+.subcontainer label{
+  font-size: 22px;
+  font-weight: 600;
+}
+.cluster{
+  padding-left: 16rem;
+}
+.cluster-btn{
+  margin-left: 41.2rem;
+  margin-top: 1rem;
+  background-color: #3A98B9;
+  color: white;
+  border-color: #3A98B9;
+
+}
+.cluster-btn:hover{
+  background-color: rgba(128, 128, 128, 0.568);
+  border-color: rgba(128, 128, 128, 0.568);
+}
+.submit-btn{
+  margin-left: 52rem;
+  background-color: rgb(60, 146, 60);
+  color: white;
+  border-color: rgb(60, 146, 60);
+}
+.submit-btn:hover{
+background-color: rgba(128, 128, 128, 0.568);
+border-color: rgba(128, 128, 128, 0.568);
+}
+
+</style>

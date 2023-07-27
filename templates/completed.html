@@ -1,0 +1,40 @@
+{% include "header.html" %}
+
+<h2 class="heading1">All Questions Answered</h2>
+<hr class="custom">
+<p class="notification">Thank You! You have answered all the questions.</p>
+<a class="view-marks" href="{% url 'score_table' %}">View Marks</a>
+
+<style>
+    /* Add your CSS styles for the "completed.html" page here */
+
+    .custom{
+        margin-left: 1rem; 
+        width: 80rem;
+    }
+    .heading1{
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+    .notification
+    {
+        margin-left: 1rem;
+    }
+    .view-marks {
+        margin-left: 1rem;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #fff700;
+        color: black;
+        text-decoration: none;
+        border-radius: 4px;
+        border-color: #fff700;
+    }
+
+    .view-marks:hover {
+        background-color: #fdf983;
+        color: black;
+    }
+
+    /* Add other styles specific to the completed page if needed */
+</style>

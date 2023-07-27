@@ -1,0 +1,14 @@
+{% include "header.html"%}
+<br><br><br>
+<div class="form-container">
+    <!-- Forms -->
+    <div class="row">
+        <div class="col col-10 offset-1">
+            <h1 class="alert alert-warning text-center">Update Question </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="update" class="btn btn-success">
+        <a href="{% url 'addQuestion' %}" class="btn btn-primary"> Back to Home</a>
+    </form>
+</div>

@@ -1,0 +1,104 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <title>Automatic MWPS Solver</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+    <br><br><br><br><br>
+    <div class="content" >
+    <div class="container" >
+
+      <div class="row justify-content-center">     
+        <div class="col-md-6 contents">
+          <div class="row justify-content-center">
+            <div class="col-md-12">
+              <div class="form-block">
+                  <div class="mb-4">
+                </div>
+                <form class="form-container"  method="post">
+                  <br>
+                  <h1>Login</h1>
+                    {% csrf_token %}
+                  <div class="form-group first input">
+                    <label class="labels" for="username">Username</label>
+                      {{ form.username }}
+                  </div><br>
+                  <div class="form-group last mb-4 input">
+                    <label class="labels" for="username">Password</label>
+                    {{ form.password }}
+                  </div>               
+                  <input type="submit" value="Log In" class="btn btn-pill text-white btn-block btn-primary btn-register">
+                 <br><br><br>
+                  <a href="{% url 'register' %}" class="frm-message">Don't have an account?</a>  
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    &nbsp;&nbsp;<span class="mb-0 text-muted">
+      {% if msg %}
+          {{ msg | safe }}
+      {% else %}
+          
+      {% endif %}
+    </span>
+  </div>
+
+
+  <style>
+
+body{
+    background-color: #EEEEEE;
+}
+    .form-container{
+    margin-left: 5rem;
+    margin-top: -4rem;
+    background-color: #3A98B9;
+    height: 30rem;
+    width: 25rem;
+    border-radius: 1.5rem;
+    color: white;
+    }
+
+    .form-container h1{
+    font-size: 24px;
+    padding-top: 1rem;
+    padding-left: 10rem;
+    padding-bottom: 2rem;
+    }
+
+    .labels{
+    font-size: 18px;
+    font-weight: 400;
+    }
+
+    .input{
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .btn-register{
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-left: 5rem;
+    margin-top: 2rem;
+    background-color: rgb(74, 133, 74);
+}
+
+.frm-message{
+  padding-left: 2rem;
+  color: white;
+}
+  </style>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+{% include "header.html"%}
+
+<h1 class="heading"> Your Marks</h1>
+    
+    <table>
+        <tr>
+            <th>Question</th>
+            <th>Solution</th>
+            <th>Total score</th>
+            <th> Answers</th>
+            <th>Your score</th>
+        </tr>
+        {% for entry in scores %}
+          {% if entry.user == request.user %}
+            <tr>
+                <td>{{ entry.question }}</td>
+                <td>{{ entry.teacher_answer }}</td>
+                <td>{{ entry.teacher_mark }}</td>
+                <td>{{ entry.student_answer }}</td>
+                <td>{{ entry.student_mark }}</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+    </table>
+
+
+    <style>
+        .heading{
+            margin-left: 35rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            text-decoration: underline;
+        }
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin-left: 4rem;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>

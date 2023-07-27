@@ -1,0 +1,94 @@
+{% include "header.html"%}
+
+<style>
+    /* CSS styles for table and button */
+    table {
+        margin-top: 5rem;
+        margin-left: 15rem;
+        width: 60%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .view-details-button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+</style>
+<br>
+<a class="btn-back" href="{% url 'teacher_Page' %}">Back</a>
+
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Student Name</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>Student Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for username in users %}
+        <tr>  
+            <td> </td>
+            <td> </td>   
+            <td> </td>
+            <td>{{ username }}</td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td><a href="{% url 'user_details' username %}" class="view-details-button">View Details</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+
+<style>
+.btn-back{
+  text-decoration: none;
+  margin-left: 78rem;
+  /* margin-top: 5rem; */
+  background-color: rgba(128, 128, 128, 0.568);
+  border-color: rgba(128, 128, 128, 0.568);
+  color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+  border-radius: 2rem;
+  }
+  .btn-back:hover{
+    background-color: #3A98B9;
+    border-color: #3A98B9;
+}
+</style>

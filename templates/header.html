@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Automatic AWPs Corrector</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+     <link rel="stylesheet" href="/static/css/home.css ">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+  <body>   
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+    <script src="/static/js/home.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+    <header>
+      <nav class="nav">
+        <h1>Automatic AWPs Corrector</h1>
+        <a type="button" href="{% url 'logout_view' %}" class="btn btn-logout">Logout</a>
+        
+      </nav>
+
+      <style>
+
+        .nav
+        {
+          background-color: #3A98B9;
+          height: 3rem;
+        }
+      
+        .nav h1{
+          color: white;
+          font-size: 20px;
+          margin-left: 5.5rem;
+          margin-top: 0.5rem;
+        }
+        .btn-logout
+        {
+          margin-top: 0.2rem;
+          margin-bottom: 0.2rem;
+          margin-left: 55rem;
+          border:#EEEEEE solid;
+          border-radius: 1.5rem;
+          padding: 5px 32px;
+          background-color: transparent;
+          color: #EEEEEE;
+          font-weight: 600;
+        }
+      
+        .btn-logout:hover
+        {
+          background-color: #EEEEEE;
+          color: black;
+        }
+    </style>
+    </header>

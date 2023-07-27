@@ -1,0 +1,34 @@
+Colour palette:
+#EEEEEE; #E8D5C4; #FFF1DC; #3A98B9\
+
+
+To create a web page where the user can create, add, edit, and delete questions, you will need to use a server-side programming language such as PHP or Python to handle the data and database interactions. You will also need to use HTML, CSS, and JavaScript to create the user interface and handle user interactions.
+
+Here are the steps you can follow to create this web page:
+
+Design the user interface: Sketch out the layout of your web page and the different components it will include. For example, you might want to include a form where users can create new questions, a list of existing questions that can be edited or deleted, and buttons for submitting the form and performing other actions.
+
+Create the database: You will need a database to store the questions and their associated data. Use a database management system like MySQL or PostgreSQL to create a database with a table for storing questions.
+
+Set up the server-side code: Use a server-side programming language to create the code that will interact with the database and handle user requests. Use a framework like Flask or Laravel to simplify this process.
+
+Build the form for creating new questions: Use HTML and CSS to create a form where users can enter new questions. Use JavaScript to validate the form and ensure that all required fields are filled out.
+
+Display existing questions: Use server-side code to retrieve a list of existing questions from the database and display them on the web page. Use HTML and CSS to format the list and make it easy to read.
+
+Add editing and deleting functionality: Create buttons or links that allow users to edit or delete individual questions. Use server-side code to handle these actions and update the database accordingly.
+
+Test and debug: Test the web page thoroughly to ensure that it works as expected. Use debugging tools to identify and fix any issues that arise.
+
+Deploy the web page: Once you are satisfied with your web page, deploy it to a web server or hosting service so that others can access it.
+
+By following these steps, you should be able to create a web page that allows users to create, add, edit, and delete questions. Good luck!
+
+
+
+
+how to form a new table called papers by merging the contents of table paper_details with the content of table question_table in django. 
+
+The fields in paper_details are instName, subjectName,LOS,date
+
+The fileds in question_table are question, answer
